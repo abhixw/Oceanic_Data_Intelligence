@@ -72,7 +72,7 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
 
 ## 📸 Screenshots
 
-*(Add screenshots here to showcase the parallel mic/input alignment and data visualizations)*
+![Oceanic Data Intelligence Dashboard](images/dashboard_preview.png)
 
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
