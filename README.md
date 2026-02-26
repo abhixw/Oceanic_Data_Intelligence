@@ -4,44 +4,6 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
 
 ## Features
 
--  Interactive Data Exploration: Query the Titanic dataset using natural language to gain insights into demographics, survival rates, and more.
--  Hands-Free Voice Analysis: Fully integrated microphone support with advanced silence detection (3-second threshold) and automatic submission.
--  Real-time Transcription: Seamless conversion of speech to text for instant AI analysis.
--  Reverse-Chronological Chat: The most recent queries and AI insights are automatically prepended to the top of the chat history.
--  Premium UI: A white-themed interface with perfectly aligned input components for a professional user experience.
--  Autonomous Backend Agent: Powered by LangChain and Groq for fast, accurate data interpretation and retrieval.
--  High-Speed Inference: Sub-second analysis powered by the Llama 3.3 70b model.
-
-## System Architecture
-
-![Oceanic System Architecture](images/System_architecture.jpeg)
-
-The system is built on a modular four-layer architecture for maximum scalability and precision:
-
-1.  **Interaction Layer (Streamlit)**: A premium frontend handling voice input, transcription visualization, and real-time chat analytics.
-2.  **Orchestration Layer (FastAPI & LangChain)**: The backbone that manages API requests and directs the ReAct agent loop.
-3.  **Intelligence Layer (Groq & Llama 3.3 70b)**: High-speed inference engine providing advanced reasoning and data interpretation.
-4.  **Data Execution Layer (Python & Pandas)**: The secure sandbox where code is executed against the Titanic dataset for 100% accurate analysis.
-
-- Interactive Data Exploration: Query the Titanic dataset using natural language to gain insights into demographics, survival rates, and more.
-- Hands-Free Voice Analysis: Fully integrated microphone support with advanced silence detection (3-second threshold) and automatic submission.
-- Real-time Transcription: Seamless conversion of speech to text for instant AI analysis.
-- Reverse-Chronological Chat: The most recent queries and AI insights are automatically prepended to the top of the chat history.
-- Premium UI: A white-themed interface with perfectly aligned input components for a professional user experience.
-- Autonomous Backend Agent: Powered by LangChain and Groq for fast, accurate data interpretation and retrieval.
-- High-Speed Inference: Sub-second analysis powered by the Llama 3.3 70b model.
-
-## System Architecture
-
-![Oceanic System Architecture](images/System_architecture.jpeg)
-
-The system is built on a modular four-layer architecture for maximum scalability and precision:
-
-1.  **Interaction Layer (Streamlit)**: A premium frontend handling voice input, transcription visualization, and real-time chat analytics.
-2.  **Orchestration Layer (FastAPI & LangChain)**: The backbone that manages API requests and directs the ReAct agent loop.
-3.  **Intelligence Layer (Groq & Llama 3.3 70b)**: High-speed inference engine providing advanced reasoning and data interpretation.
-4.  **Data Execution Layer (Python & Pandas)**: The secure sandbox where code is executed against the Titanic dataset for 100% accurate analysis.
-
 ## Screenshots
 
 ![Oceanic Data Intelligence Dashboard](images/dashboard_preview.png)
