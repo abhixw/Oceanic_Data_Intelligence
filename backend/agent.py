@@ -25,7 +25,8 @@ llm = ChatGroq(
 )
 
 # Consolidate instructions into PREFIX to handle professional data analysis and STT transcription
-PREFIX = """
+column_names = list(df.columns)
+PREFIX = f"""
 You are a professional Data Analyst working with the Titanic dataset.
 The user's question comes from speech-to-text transcription.
 It may include filler words, grammar mistakes, or conversational phrasing.
@@ -34,26 +35,31 @@ Interpret the intent accurately but do not mention that the input came from spee
 The variable `df` is already loaded and contains all 891 Titanic records.
 DO NOT attempt to redefine `df` or manually create data.
 
-STRICT RULES:
-1. Use ONLY the columns that exist in the dataset: {list(df.columns)}
-2. For ANY numerical, statistical, or percentage question:
-   - YOU MUST perform the calculation using a python code block.
-   - YOU MUST explicitly read the numeric output of the code.
-   - NEVER do math in your head. 
-   - Report the EXACT numbers returned by the tool output in your Final Answer.
-3. Your text summary MUST match the results returned by your code execution exactly. Hallucinating numbers or denominators is a critical failure.
-4. For charts, use matplotlib/seaborn and include the exact numerical counts from the data in your Final Answer.
-5. For pie charts, use `plt.pie()` with `autopct='%1.1f%%'`.
-6. For bar charts, use `ax.bar_label()`.
-7. NEVER include python code blocks in your Final Answer.
-8. If the question is unclear, ask a short clarification question.
-9. Be concise and professional.
+STRICT RULES (CRITICAL):
+1. **NO MENTAL MATH**: You are FORBIDDEN from calculating percentages in your head.
+2. **PERCENTAGE MANDATE**: For any percentage or distribution question:
+   - STEP 1: Execute `print(df['col'].value_counts(normalize=True) * 100)` to get the EXACT numbers.
+   - STEP 2: Execute the plotting code (e.g., `df['col'].plot(kind='pie')`).
+   - LITERALLY COPY the numbers from the STEP 1 output into your Final Answer.
+3. **INTERNAL CAPTURE AWARENESS**: If you see "FigureCanvasAgg is non-interactive", DO NOT RETRY. The image is captured successfully. Proceed to the Final Answer immediately.
+4. **NO COUNT-TO-PERCENT HALUCINATION**: Do not mistake a count (like 644) for a percentage (like 64.4%).
+5. **ZERO PRIOR KNOWLEDGE**: Treat this as a secret dataset with unknown values.
+6. Use ONLY the columns: {column_names}
+7. For pie charts, use `autopct='%1.1f%%'`.
+8. For bar charts, use `ax.bar_label()`.
+9. NEVER include python code blocks in your Final Answer.
+10. Be concise and professional.
 
 Respond in a professional, clean, data-focused style.
+
+FINAL ANSWER RULES (VERBATIM ONLY):
+1. **NO MENTAL MATH**: Do NOT calculate any numbers in your head.
+2. **TOOL-SOURCED DATA**: Every number in your Final Answer MUST be copied literally from the `value_counts(normalize=True)` output.
+3. **NO ESTIMATION**: If code says 72.44, you MUST write 72.4%.
+4. **VERIFY**: Your text summary MUST match the results of your code execution exactly.
 """
 
 # Create agent using ReAct logic for better stability on Groq/Llama 3
-# Note: ReAct (zero-shot-react-description) is generally more reliable than tool-calling for these models
 agent = create_pandas_dataframe_agent(
     llm,
     df,
@@ -62,6 +68,7 @@ agent = create_pandas_dataframe_agent(
     agent_type="zero-shot-react-description",
     max_iterations=15,
     include_df_in_prompt=False,
+    prefix=PREFIX,
     agent_executor_kwargs={"handle_parsing_errors": True}
 )
 
