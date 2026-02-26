@@ -70,7 +70,7 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
    streamlit run app.py
    ```
 
-## 🌐 Production Deployment (Render)
+##  Production Deployment (Render)
 
 ### 1. Manual Setup
 When deploying to Render, you **must** set the following in the Render Dashboard:
@@ -86,7 +86,7 @@ When deploying to Render, you **must** set the following in the Render Dashboard
 ### 2. Automatic Detection
 I have also provided `runtime.txt` files in the root and backend folders to help Render automatically detect the correct Python version.
 
-## 🎈 Production Deployment (Streamlit Community Cloud)
+##  Production Deployment (Streamlit Community Cloud)
 
 To deploy the frontend to Streamlit Community Cloud:
 
