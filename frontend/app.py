@@ -151,7 +151,7 @@ if prompt:
 
         try:
             response = requests.post(
-                "http://127.0.0.1:8000/ask",
+                "https://oceanic-data-intelligence.onrender.com/ask",
                 json={"question": prompt},
                 timeout=300
             )
