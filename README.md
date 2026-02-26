@@ -72,12 +72,19 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
 
 ## 🌐 Production Deployment (Render)
 
-When deploying to Render, use the following start command for the backend to handle the dynamic port assignment:
+### 1. Manual Setup
+When deploying to Render, you **must** set the following in the Render Dashboard:
 
-**Start Command**:
-```bash
-uvicorn backend:app --host 0.0.0.0 --port $PORT
-```
+1. **Environment Variable**: 
+   - Key: `PYTHON_VERSION`
+   - Value: `3.10.14` (This is critical to avoid build errors with experimental Python versions).
+2. **Start Command**:
+   ```bash
+   uvicorn backend:app --host 0.0.0.0 --port $PORT
+   ```
+
+### 2. Automatic Detection
+I have also provided `runtime.txt` files in the root and backend folders to help Render automatically detect the correct Python version.
 
 ## System Architecture
 
