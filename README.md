@@ -8,7 +8,7 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
 - **🎙️ Hands-Free Voice Analysis**: Fully integrated microphone support with advanced silence detection (3-second threshold) and automatic submission.
 - **⚡ Real-time Transcription**: Seamless conversion of speech to text for instant AI analysis.
 - **🕒 Reverse-Chronological Chat**: The most recent queries and AI insights are automatically prepended to the top of the chat history.
-- **🖥️ Premium UI**: A sleek, dark-themed interface with perfectly aligned input components for a professional user experience.
+- **🖥️ Premium UI**: A white-themed interface with perfectly aligned input components for a professional user experience.
 - **🤖 Autonomous Backend Agent**: Powered by LangChain and Groq for fast, accurate data interpretation and retrieval.
 
 ## 🛠️ Tech Stack
