@@ -56,12 +56,12 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
    pip install audio-recorder-streamlit SpeechRecognition
    ```
 
-### Running the Project
+### Running the Project (Local)
 
 1. **Start the Backend**:
    ```bash
    cd backend
-   uvicorn agent:app --host 127.0.0.1 --port 8000
+   uvicorn backend:app --host 127.0.0.1 --port 8000
    ```
 
 2. **Start the Frontend**:
@@ -69,6 +69,15 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
    cd frontend
    streamlit run app.py
    ```
+
+## 🌐 Production Deployment (Render)
+
+When deploying to Render, use the following start command for the backend to handle the dynamic port assignment:
+
+**Start Command**:
+```bash
+uvicorn backend:app --host 0.0.0.0 --port $PORT
+```
 
 ## System Architecture
 
