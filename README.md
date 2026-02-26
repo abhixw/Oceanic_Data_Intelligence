@@ -86,6 +86,17 @@ When deploying to Render, you **must** set the following in the Render Dashboard
 ### 2. Automatic Detection
 I have also provided `runtime.txt` files in the root and backend folders to help Render automatically detect the correct Python version.
 
+## 🎈 Production Deployment (Streamlit Community Cloud)
+
+To deploy the frontend to Streamlit Community Cloud:
+
+1. **Main File Path**: Set this to `frontend/app.py` during deployment.
+2. **Python Version**: I have provided `frontend/runtime.txt` which forces **Python 3.10**. This is essential for compatibility with the voice recording libraries.
+3. **Dependencies**: The app will automatically install all necessary libraries from `frontend/requirements.txt`.
+
+> [!TIP]
+> If you encounter a `ModuleNotFoundError` for `audio_recorder_streamlit`, please **Reboot App** from the Streamlit Cloud dashboard to ensure the new `requirements.txt` is processed.
+
 ## System Architecture
 
 ![Oceanic System Architecture](images/System_architecture.jpeg)
