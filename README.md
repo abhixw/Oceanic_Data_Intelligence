@@ -70,6 +70,17 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
    streamlit run app.py
    ```
 
+## 🏗️ System Architecture
+
+![Oceanic System Architecture](images/system_architecture.png)
+
+The system is built on a modular four-layer architecture for maximum scalability and precision:
+
+1.  **Interaction Layer (Streamlit)**: A premium frontend handling voice input, transcription visualization, and real-time chat analytics.
+2.  **Orchestration Layer (FastAPI & LangChain)**: The backbone that manages API requests and directs the ReAct agent loop.
+3.  **Intelligence Layer (Groq & Llama 3.3 70b)**: High-speed inference engine providing advanced reasoning and data interpretation.
+4.  **Data Execution Layer (Python & Pandas)**: The secure sandbox where code is executed against the Titanic dataset for 100% accurate analysis.
+
 ## 📸 Screenshots
 
 ![Oceanic Data Intelligence Dashboard](images/dashboard_preview.png)
