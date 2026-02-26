@@ -26,6 +26,7 @@ The system is built on a modular four-layer architecture for maximum scalability
 ## Screenshots
 
 ![Oceanic Data Intelligence Dashboard](images/dashboard_preview.png)
+![Oceanic Data Intelligence Mobile](images/dashboard_phone.jpeg)
 
 
 ## Tech Stack
