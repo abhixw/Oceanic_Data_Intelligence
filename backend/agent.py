@@ -24,7 +24,7 @@ llm = ChatGroq(
     temperature=0
 )
 
-# Consolidate instructions into PREFIX to handle professional data analysis and STT transcription
+# Instructions into PREFIX to handle professional data analysis and STT transcription
 column_names = list(df.columns)
 PREFIX = f"""
 You are a professional Data Analyst working with the Titanic dataset.

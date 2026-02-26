@@ -8,7 +8,7 @@ from audio_recorder_streamlit import audio_recorder
 import speech_recognition as sr
 
 # ----------------------------
-# 1️⃣ PAGE CONFIG (FIRST)
+# 1️⃣ PAGE CONFIG 
 # ----------------------------
 st.set_page_config(
     page_title="Oceanic Data Intelligence",
@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 # ----------------------------
-# 2️⃣ GLOBAL STYLING (PUT HERE)
+# 2️⃣ GLOBAL STYLING 
 # ----------------------------
 st.markdown("""
 <style>
