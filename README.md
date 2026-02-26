@@ -72,7 +72,7 @@ Oceanic Data Intelligence is a professional-grade AI assistant designed for inte
 
 ## 🏗️ System Architecture
 
-![Oceanic System Architecture](images/system_architecture.png)
+![Oceanic System Architecture](images/System_architecture.jpeg)
 
 The system is built on a modular four-layer architecture for maximum scalability and precision:
 
